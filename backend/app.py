@@ -16,11 +16,9 @@ def process():
     data = request.get_json()
     # Perform the backend processing here using the provided code
     p = Process(data,df,df_xl)
-    vanila,quanto = p.payouts()
-    print(vanila.head(),quanto.head())
-    output = 'hmm'
+    plot_quanto = p.plot()
     # Return the output as a JSON response
-    return jsonify({'output': output})
+    return plot_quanto
 
 
 
